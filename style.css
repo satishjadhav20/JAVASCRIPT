@@ -1,0 +1,22 @@
+div{
+    height: 100px;
+    width: 100px;
+    background-color: rebeccapurple;
+    border: 1px solid black;
+    margin: 10px;
+    transition: transform 0.5s ease;
+    color: white;
+    text-align: center;
+}
+
+.dark{
+  background-color: black;
+  color: white;
+ 
+}
+
+.light{
+    background-color: white;
+    color: black;
+
+}
