@@ -480,10 +480,54 @@ applied to offer */
 // }
 // setTimeout(hello, 15000);
 
-console.log("one");
-console.log("two");
-setTimeout(() => {
-  console.log("hello");
-},10000)
-console.log("three");
-console.log("four");
+// console.log("one");
+// console.log("two");
+// setTimeout(() => {
+//   console.log("hello");
+// },10000)
+// console.log("three");
+// console.log("four");
+
+// async function myFunction() {
+//   return "hello world";
+// }
+// myFunction().then(console.log);
+
+// function getData() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const data = [1, 2, 3, 4, 5];
+//       resolve(data);
+//     }, 10000);
+//   });
+// }
+// async function fetchData(){
+//   console.log('Fetching data...');
+//   let result = await getData();
+//   console.log('Data fetched:', result);
+// }
+
+// fetchData();
+
+async function getUserdata(resource) {
+  try {
+    let url = `https://dummyjson.com/${resource}/?limit=10&skip=5`;
+
+    let response = await fetch(url);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    let data = await response.json();
+    console.log(data);
+  } catch (e) {
+    console.log("Error fetching data:", e);
+  }
+}
+
+// 🔹 कोणताही resource fetch करण्यासाठी:
+getUserdata("products");  // प्रॉडक्ट डेटा आणेल
+getUserdata("users");     // युजर डेटा आणेल
+getUserdata("posts");     // पोस्ट डेटा आणेल
+
